@@ -1,0 +1,30 @@
+{{> header}}
+<div id="app" class="bg-light p-2" style="--bs-bg-opacity: .2;">
+<h2 align="center">
+<div class="alert alert-success" role="alert">
+{{viewTitle}}
+</div>
+</h2><br><br><br>
+<table class="table table-success table-striped table-bordered border-success" style="text-align:center ">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+             <th colspan="2" align="center">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>
+                <a class="btn btn-success" href="/class/{{this._id}}" role="button">Actualizar</a>
+                </td>
+                <td>
+                <a class="btn btn-danger" href="/class/delete/{{this._id}}"
+                onclick="return confirm('Desea eliminar el registro?')"  role="button">Eliminar</a>
+            </td>
+        </tr>
+        {{/each}}
+        </tbody>
+</table>
+</div>

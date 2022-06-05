@@ -1,0 +1,41 @@
+{{> header}}
+<div id="app" class="bg-light p-2" style="--bs-bg-opacity: .2;">
+<h2 align="center">
+<div class="alert alert-dark" role="alert">
+{{viewTitle}}
+</div>
+</h2><br><br><br>
+<table class="table table-dark table-striped table-bordered border-dark" style="text-align:center">
+    <thead>
+        <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Altura (cm)</th>
+            <th>Ubicación</th>
+            <th>Ultima Actualización</th>
+            <th>Estatus</th>
+            <th colspan="2" align="center">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.lastname}}</td>
+            <td>{{this.birthday}}</td>
+            <td>{{this.height}}</td>
+            <td>{{this.location}}</td>
+            <td>{{this.last_update}}</td>
+            <td>{{this.active}}</td>
+            <td>
+                <a class="btn btn-light" href="/student/{{this._id}}">Actualizar</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="/student/delete/{{this._id}}"
+                onclick="return confirm('Desea eliminar el registro?')">Eliminar</a>
+            </td>
+        </tr>
+        {{/each}}
+        </tbody>
+</table>

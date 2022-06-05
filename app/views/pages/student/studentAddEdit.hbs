@@ -1,0 +1,42 @@
+{{> header}}
+
+<div id="app" class="bg-light p-2" style="--bs-bg-opacity: .2;">
+<h2 align="center">
+<div class="alert alert-info" role="alert">
+{{viewTitle}}
+</h2>
+</div>
+</div>
+<div id="form">
+<form action="/student" method="post">
+<input type="hidden" name="_id" value="{{student._id}}">
+
+    <div class="mb-3">
+<label for="formGroupExampleInput" class="form-label">Nombres:</label>
+<input type="text" name="name" value="{{student.name}}" class="form-control" placeholder="Ingrese el nombre de la clase"><br>
+
+<label for="formGroupExampleInput" class="form-label">Apellidos:</label>
+<input type="text" name="lastname" value="{{student.lastname}}" class="form-control" placeholder="Ingrese el nombre de la clase"><br>
+
+<label for="formGroupExampleInput" class="form-label">Fecha de Nacimiento:</label>
+<input type="date" name="birthday" value="{{student.birthday}}" class="form-control"><br>
+
+<label for="formGroupExampleInput" class="form-label">Altura (cm):</label>
+<input type="" name="height" value="{{student.height}}" class="form-control" placeholder="Ingrese su altura" type="number" step="any"><br>
+
+<label for="formGroupExampleInput" class="form-label">Ubicación:</label>
+<input type="text" name="location" value="{{student.location}}" class="form-control" placeholder="Ingrese la ubicación"><br>
+
+<label for="formGroupExampleInput" class="form-label" >Ultima Actualización:</label>
+<input type="date" name="last_update" value="{{student.last_update}}" class="form-control"><br>
+
+<label for="formGroupExampleInput" class="form-label" >Estatus:</label>
+<input type="text" name="active" value="{{student.active}}" class="form-control" placeholder="Ingrese su status"><br>
+
+ <div class="col-12 text-center">
+<button type="submit" class="btn btn-info">Guardar</button>
+<a class="btn btn-warning" href="/home">Regresar a Home</a>
+</div>
+</div>
+</form>
+

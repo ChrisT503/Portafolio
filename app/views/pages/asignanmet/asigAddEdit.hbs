@@ -1,0 +1,35 @@
+{{> header}}
+<div id="app" class="bg-light p-2" style="--bs-bg-opacity: .2;">
+<h2 align="center">
+<div class="alert alert-secondary" role="alert">
+{{viewTitle}}
+</div>
+</h2><br><br><br>
+</div> 
+<div id="form">
+<form action="/asignanmet" method="post">
+
+<input type="hidden" name="_id" value="{{asig._id}}">
+<div class="col">        
+    <div class="row">
+    <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Grado:</label>
+    <input type="text" name="grade" value="{{asig.grade}}" class="form-control" placeholder="Ingrese su grado"><br>
+  <div class="col">  
+Nombre:
+<input type="text" name="name" value="{{asig.name}}" class="form-control" placeholder="Ingrese su nombre"><br>
+    </div>
+  <div class="col"> 
+ID. Estudiante:
+<input type="text" name="e_id" value="{{asig.e_id}}" class="form-control" placeholder="Ingrese su ID de estudiante"><br>
+  </div>
+   <div class="col"> 
+ID. Clase:
+<input type="text" name="c_id" value="{{asig.c_id}}" class="form-control" placeholder="Ingrese su ID de clase"><br>
+ <div class="col-12 text-center">
+<button type="submit" class="btn btn-secondary">Guardar</button>
+<a class="btn btn-warning" href="/home">Salir</a>
+</div>
+</div>
+</div>
+</form>
